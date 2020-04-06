@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wavify – Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <div class="player">
+
+      <div class="album-art" id="album-art">
+        <img id="cover-img" src="https://picsum.photos/seed/music-cover-1/300/300" alt="Album Art" />
+        <div class="vinyl-ring"></div>
+      </div>
+
+      <div class="track-info">
+        <h2 id="track-title">Midnight Dreams</h2>
+        <p id="track-artist">The Coastal</p>
+        <span id="track-album">Summer Sessions</span>
+      </div>
+
+      <div class="progress-area">
+        <span id="current-time">0:00</span>
+        <div class="progress-bar" id="progress-bar" onclick="seek(event)">
+          <div class="progress-fill" id="progress-fill"></div>
+          <div class="progress-thumb" id="progress-thumb"></div>
+        </div>
+        <span id="duration">3:24</span>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" onclick="toggleShuffle()" id="btn-shuffle" title="Shuffle">⇄</button>
+        <button class="ctrl-btn" onclick="prevTrack()" title="Previous">⏮</button>
+        <button class="ctrl-btn play-btn" id="play-btn" onclick="togglePlay()">▶</button>
+        <button class="ctrl-btn" onclick="nextTrack()" title="Next">⏭</button>
+        <button class="ctrl-btn" onclick="toggleRepeat()" id="btn-repeat" title="Repeat">↺</button>
+      </div>
+
+      <div class="volume-area">
+        <span>🔈</span>
+        <input type="range" id="volume" min="0" max="100" value="70" oninput="setVolume(this.value)" />
+        <span>🔊</span>
+      </div>
+
+    </div>
+
+    <div class="playlist">
+      <div class="playlist-header">
+        <h3>Up Next</h3>
+        <span id="track-counter">1 / 6</span>
+      </div>
+      <ul id="track-list"></ul>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
